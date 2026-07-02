@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sharon Make Up Lounge - Premium beauty, cosmetics, hair, and nail products. Discover our curated collection of luxury beauty essentials matching our logo aesthetic.">
+  <meta name="author" content="Sharon Make Up Lounge">
+  <title>Sharon Make Up Lounge | Premium Beauty & Cosmetics Storefront</title>
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       1. STICKY HEADER / NAVIGATION
+       ========================================================================== -->
+  <header>
+    <div class="nav-container">
+      <!-- Logo image provided by the user -->
+      <a href="#home" class="logo" aria-label="Sharon Make Up Lounge Home">
+        <img src="assets/logo.png" alt="Sharon Make Up Lounge Logo" class="logo-img">
+      </a>
+
+      <!-- Desktop Links -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#shop">Shop/Products</a></li>
+          <li><a href="#reels">Featured Reels</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#testimonials">Reviews</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Hamburger mobile toggler -->
+      <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer Overlay Menu -->
+    <ul class="mobile-nav" id="mobileNav">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#shop">Shop/Products</a></li>
+      <li><a href="#reels">Featured Reels</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </header>
+
+  <main>
+    <!-- ==========================================================================
+         2. HERO / HEADER CAROUSEL
+         ========================================================================== -->
+    <section id="home" class="hero" aria-label="Welcome Slider">
+      <div class="hero-slider">
+        <!-- Slide 1: Main Hero -->
+        <div class="slide active" style="background-image: url('assets/hero_bg.png');"></div>
+        <!-- Slide 2: Makeup Focus -->
+        <div class="slide" style="background-image: url('assets/prod_makeup.png');"></div>
+        <!-- Slide 3: Skincare Focus -->
+        <div class="slide" style="background-image: url('assets/prod_skincare.png');"></div>
+      </div>
+
+      <!-- Tagline & Action Overlays (Refactored to look incredibly clean and bright) -->
+      <div class="hero-content reveal">
+        <h1>
+          <span>Welcome to Sharon Lounge</span>
+          Your Trusted Source for Beauty Essentials
+        </h1>
+        <p>Explore our premium collection of handpicked makeup, salon-grade hair care, and professional nail accessories designed for modern aesthetics.</p>
+        <div class="hero-ctas">
+          <a href="#shop" class="btn btn-primary">Shop Now</a>
+          <a href="#about" class="btn btn-outline">Explore Products</a>
+        </div>
+      </div>
+
+      <!-- Arrow Controls -->
+      <div class="slider-arrows">
+        <button id="prevSlide" class="slider-btn" aria-label="Previous image">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 19l-7-7 7-7"/></svg>
+        </button>
+        <button id="nextSlide" class="slider-btn" aria-label="Next image">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+
+      <!-- Scroll reminder -->
+      <a href="#shop" class="scroll-down" aria-label="Scroll down to gallery">
+        <span>Scroll Down</span>
+        <div class="scroll-down-mouse">
+          <div class="scroll-down-wheel"></div>
+        </div>
+      </a>
+    </section>
+
+    <!-- ==========================================================================
+         3. PRODUCT & PRODUCT VIDEOS GALLERY
+         ========================================================================== -->
+    <section id="shop" class="section-padding container" aria-labelledby="gallery-title">
+      <div class="section-header reveal">
+        <h2 id="gallery-title">Our Collections</h2>
+        <p>Curated cosmetics and accessories. Click any item to explore products or play video demonstrations.</p>
+      </div>
+
+      <!-- Interactive filter tabs -->
+      <div class="gallery-filters reveal">
+        <button class="filter-btn active" data-filter="all">All Products</button>
+        <button class="filter-btn" data-filter="makeup">Makeup</button>
+        <button class="filter-btn" data-filter="hair">Hair</button>
+        <button class="filter-btn" data-filter="nails">Nails</button>
+        <button class="filter-btn" data-filter="skincare">Skincare</button>
+      </div>
+
+      <!-- Grid displaying images & looping videos (Insta-store layout style) -->
+      <div class="gallery-grid reveal-stagger reveal">
+        <!-- Item 1: Makeup Image -->
+        <article class="gallery-item" data-category="makeup">
+          <div class="gallery-media">
+            <img src="assets/prod_makeup.png" alt="Satin Matte Lipsticks" loading="lazy">
+          </div>
+          <div class="gallery-overlay">
+            <h3>Satin Matte Lipsticks</h3>
+            <p>Makeup • View Product Details</p>
+          </div>
+        </article>
+
+        <!-- Item 2: Hair Video -->
+        <article class="gallery-item" data-category="hair" data-video="true">
+          <div class="gallery-media">
+            <!-- Sample loop video with local generated hair product poster fallback -->
+            <video src="https://assets.mixkit.co/videos/preview/mixkit-girl-brushing-her-long-shiny-hair-41584-large.mp4" poster="assets/prod_hair.png" muted loop playsinline></video>
+          </div>
+          <div class="play-icon-overlay" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <div class="gallery-overlay">
+            <h3>Silk Infusion Hair Dropper</h3>
+            <p>Hair • Play Demo Video</p>
+          </div>
+        </article>
+
+        <!-- Item 3: Nails Image -->
+        <article class="gallery-item" data-category="nails">
+          <div class="gallery-media">
+            <img src="assets/prod_nails.png" alt="Luxury Nails & Polish Polish" loading="lazy">
+          </div>
+          <div class="gallery-overlay">
+            <h3>Luxury Gold Lacquer Set</h3>
+            <p>Nails • View Product Details</p>
+          </div>
+        </article>
+
+        <!-- Item 4: Skincare Video -->
+        <article class="gallery-item" data-category="skincare" data-video="true">
+          <div class="gallery-media">
+            <video src="https://assets.mixkit.co/videos/preview/mixkit-hands-of-a-woman-applying-moisturizer-43093-large.mp4" poster="assets/prod_skincare.png" muted loop playsinline></video>
+          </div>
+          <div class="play-icon-overlay" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <div class="gallery-overlay">
+            <h3>Retinol Moisture Cream</h3>
+            <p>Skincare • Play Demo Video</p>
+          </div>
+        </article>
+
+        <!-- Item 5: Makeup Image -->
+        <article class="gallery-item" data-category="makeup">
+          <div class="gallery-media">
+            <img src="assets/hero_bg.png" alt="Premium Shimmer Eyeshadow Palette" loading="lazy">
+          </div>
+          <div class="gallery-overlay">
+            <h3>Shimmer Eyeshadow Kit</h3>
+            <p>Makeup • View Product Details</p>
+          </div>
+        </article>
+
+        <!-- Item 6: Nails Image -->
+        <article class="gallery-item" data-category="nails">
+          <div class="gallery-media">
+            <img src="assets/prod_nails.png" alt="Elegant Acrylic Nail Extensions" loading="lazy">
+          </div>
+          <div class="gallery-overlay">
+            <h3>Chic Sculpting Extension Tips</h3>
+            <p>Nails • View Product Details</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         4. REELS STYLE VIDEO SHOWCASE
+         ========================================================================== -->
+    <section id="reels" class="reels-section section-padding" aria-labelledby="reels-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 id="reels-title">Featured Content & Reels</h2>
+          <p>Short makeup tutorials, transformations, and techniques. Hover to preview, click to expand.</p>
+        </div>
+
+        <div class="reels-carousel-container reveal">
+          <!-- Horizontal scrollable layout -->
+          <div class="reels-carousel-wrapper" id="reelsWrapper">
+            
+            <!-- Reel 1: Ombre Lip Technique -->
+            <div class="reel-card" data-video="true">
+              <div class="reel-play-btn" aria-label="Play Reels Tutorial">
+                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <div class="reel-video-container">
+                <video src="https://assets.mixkit.co/videos/preview/mixkit-girl-putting-on-makeup-in-front-of-a-mirror-32757-large.mp4" poster="assets/reel_makeup.png" muted loop playsinline></video>
+              </div>
+              <div class="reel-overlay">
+                <span class="author">@sharon_makeup</span>
+                <h4>Ombre Lip Lining & Gloss Technique</h4>
+              </div>
+            </div>
+
+            <!-- Reel 2: Hair Wave transformation -->
+            <div class="reel-card" data-video="true">
+              <div class="reel-play-btn" aria-label="Play Reels Tutorial">
+                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <div class="reel-video-container">
+                <video src="https://assets.mixkit.co/videos/preview/mixkit-stylist-spraying-water-on-a-customers-hair-41582-large.mp4" poster="assets/reel_hair.png" muted loop playsinline></video>
+              </div>
+              <div class="reel-overlay">
+                <span class="author">@sharon_makeup</span>
+                <h4>Glossy Wave & Curl Texturing</h4>
+              </div>
+            </div>
+
+            <!-- Reel 3: Gold Foil Nail Art -->
+            <div class="reel-card" data-video="true">
+              <div class="reel-play-btn" aria-label="Play Reels Tutorial">
+                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <div class="reel-video-container">
+                <video src="https://assets.mixkit.co/videos/preview/mixkit-manicurist-applying-pink-nail-polish-to-a-client-41617-large.mp4" poster="assets/reel_nails.png" muted loop playsinline></video>
+              </div>
+              <div class="reel-overlay">
+                <span class="author">@sharon_makeup</span>
+                <h4>Gold Foil Detailing on Acrylics</h4>
+              </div>
+            </div>
+
+            <!-- Reel 4: Night Radiance Routine -->
+            <div class="reel-card" data-video="true">
+              <div class="reel-play-btn" aria-label="Play Reels Tutorial">
+                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <div class="reel-video-container">
+                <video src="https://assets.mixkit.co/videos/preview/mixkit-woman-washing-her-face-with-water-in-slow-motion-42289-large.mp4" poster="assets/prod_skincare.png" muted loop playsinline></video>
+              </div>
+              <div class="reel-overlay">
+                <span class="author">@sharon_makeup</span>
+                <h4>Night Skin Radiance & Cleansing</h4>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Slider Arrow Controllers -->
+          <div class="reels-arrows">
+            <button id="prevReel" class="slider-btn" aria-label="Scroll left">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 19l-7-7 7-7"/></svg>
+            </button>
+            <button id="nextReel" class="slider-btn" aria-label="Scroll right">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         5. ABOUT US (Split Layout + Stats)
+         ========================================================================== -->
+    <section id="about" class="section-padding container" aria-labelledby="about-title">
+      <div class="about-grid">
+        
+        <!-- Left: Text content -->
+        <div class="about-content reveal">
+          <h2 id="about-title" style="display:none">About Us</h2>
+          <span class="accent-text">About Sharon Make Up Lounge</span>
+          <h3>Your Premium Destination for Beauty & Transformation</h3>
+          <p>For nearly a decade, Sharon Make Up Lounge has served as a sanctuary of self-expression. We believe that cosmetics are not meant to mask, but to highlight your unique canvas. Our storefront brings together handpicked, authentic cosmetics and curated styling accessories suited for Gen Z and millennial tastemakers.</p>
+          
+          <ul class="about-bullets">
+            <li>
+              <!-- Magenta Checkmark SVG -->
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <strong>100% Authentic Curation:</strong> All cosmetic ranges are direct imports from certified international brands.
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <strong>Expert Consultation:</strong> Our lounge provides personalized tone-matching and technique styling.
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <strong>Cruelty-Free Focus:</strong> We prioritize formulas that are ethical, vegan-friendly, and skin-enriching.
+            </li>
+          </ul>
+
+          <!-- Stats Counter row -->
+          <div class="stats-row">
+            <div class="stat-item">
+              <span class="stat-number">629+</span>
+              <span class="stat-label">Product Posts</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">1,900+</span>
+              <span class="stat-label">Community Followers</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">8+</span>
+              <span class="stat-label">Years of Glamour</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Styled image frame -->
+        <div class="about-media-wrapper reveal">
+          <div class="about-img-frame">
+            <img src="assets/about_interior.png" alt="Luxury vanity mirrors and seating inside Sharon Make Up Lounge" loading="lazy">
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         6. TESTIMONIALS CAROUSEL
+         ========================================================================== -->
+    <section id="testimonials" class="testimonials-section section-padding" aria-labelledby="testimonials-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 id="testimonials-title">Loved by Our Community</h2>
+          <p>Hear from the gorgeous voices who trust us for their daily glam routines.</p>
+        </div>
+
+        <div class="testimonials-slider-container reveal">
+          <div class="testimonials-wrapper" id="testimonialsWrapper">
+            
+            <!-- Slide 1 -->
+            <div class="testimonial-card">
+              <!-- Quote icon -->
+              <svg class="quote-icon" viewBox="0 0 24 24"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+              <div class="testimonial-stars" style="display: flex; gap: 4px; margin-bottom: 12px; color: var(--accent-gold);">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              </div>
+              <p class="testimonial-text">"Best products. If you are beginner or advanced one you will get all makeup range."</p>
+              <div class="testimonial-client">
+                <span class="client-name">CAPTURE THE SMILE</span>
+                <span class="client-handle">Local Guide, Google Review</span>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="testimonial-card">
+              <svg class="quote-icon" viewBox="0 0 24 24"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+              <div class="testimonial-stars" style="display: flex; gap: 4px; margin-bottom: 12px; color: var(--accent-gold);">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              </div>
+              <p class="testimonial-text">"Best place to buy all makeup and beauty products."</p>
+              <div class="testimonial-client">
+                <span class="client-name">Krish Narialwala</span>
+                <span class="client-handle">Google Review</span>
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="testimonial-card">
+              <svg class="quote-icon" viewBox="0 0 24 24"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+              <div class="testimonial-stars" style="display: flex; gap: 4px; margin-bottom: 12px; color: var(--accent-gold);">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              </div>
+              <p class="testimonial-text">"Products they have vegan and very good. And very polite nature."</p>
+              <div class="testimonial-client">
+                <span class="client-name">Riya</span>
+                <span class="client-handle">Google Review</span>
+              </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="testimonial-card">
+              <svg class="quote-icon" viewBox="0 0 24 24"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+              <div class="testimonial-stars" style="display: flex; gap: 4px; margin-bottom: 12px; color: var(--accent-gold);">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              </div>
+              <p class="testimonial-text">"Makeup studio products dealer in Gujarat."</p>
+              <div class="testimonial-client">
+                <span class="client-name">Vishhal Naayee</span>
+                <span class="client-handle">Local Guide, Google Review</span>
+              </div>
+            </div>
+
+            <!-- Slide 5 -->
+            <div class="testimonial-card">
+              <svg class="quote-icon" viewBox="0 0 24 24"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+              <div class="testimonial-stars" style="display: flex; gap: 4px; margin-bottom: 12px; color: var(--accent-gold);">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              </div>
+              <p class="testimonial-text">"One stop for every make up need."</p>
+              <div class="testimonial-client">
+                <span class="client-name">Nimesh Joshi</span>
+                <span class="client-handle">Local Guide, Google Review</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Testimonial indicators -->
+          <div class="testimonials-dots" id="testimonialDots"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         7. CONTACT & LOCATION INFO
+         ========================================================================== -->
+    <section id="contact" class="section-padding container" aria-labelledby="contact-title">
+      <div class="contact-grid">
+        
+        <!-- Column 1: Client inquiry form -->
+        <div class="contact-form-wrapper reveal">
+          <h3 id="contact-title">Get in Touch</h3>
+          <p>Have questions about shades, shipping, or custom bookings? Write to our lounge team.</p>
+          
+          <form id="contactForm" novalidate>
+            <div class="form-group-row">
+              <div class="form-group">
+                <label for="name" class="form-label">Full Name</label>
+                <input type="text" id="name" name="name" class="form-control" placeholder="Alexa Rose" required>
+              </div>
+              <div class="form-group">
+                <label for="whatsappNum" class="form-label">WhatsApp Number</label>
+                <input type="tel" id="whatsappNum" name="whatsappNum" class="form-control" placeholder="99250 27523" required>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="subject" class="form-label">Subject</label>
+              <input type="text" id="subject" name="subject" class="form-control" placeholder="Shade Selection / Shipping Inquiry" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="message" class="form-label">Message</label>
+              <textarea id="message" name="message" class="form-control" placeholder="Your questions or thoughts..." required></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary submit-btn">Send via WhatsApp</button>
+          </form>
+        </div>
+
+        <!-- Column 2: Details and Location Map -->
+        <div class="contact-info-panel reveal">
+          
+          <!-- Contact details block -->
+          <div class="contact-info-block">
+            <h4>Lounge Details</h4>
+            <ul class="info-list">
+              <li>
+                <!-- Map Pin SVG -->
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <span>Murlidhar Complex, Cellar, opposite Hanumanji Temple, behind Sunphoto, Nehrunagar, Ambawadi, Ahmedabad, Gujarat 380015</span>
+              </li>
+              <li>
+                <!-- Phone SVG -->
+                <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.01-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                <a href="tel:+919925027523">+91 99250 27523</a>
+              </li>
+              <li>
+                <!-- Mail SVG -->
+                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                <a href="mailto:hello@sharonlounge.com">hello@sharonlounge.com</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Social links -->
+          <div class="contact-info-block">
+            <h4>Follow & Message Us</h4>
+            <div class="social-icons-row">
+              <!-- Instagram -->
+              <a href="#" class="social-icon-btn" aria-label="Instagram Profile">
+                <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+              </a>
+              <!-- WhatsApp -->
+              <a href="https://wa.me/919925027523" target="_blank" class="social-icon-btn" aria-label="WhatsApp Chat">
+                <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.42 9.864-9.858.002-2.634-1.02-5.11-2.881-6.974-1.861-1.863-4.332-2.888-6.969-2.889-5.442 0-9.87 4.417-9.873 9.861-.001 1.75.474 3.42 1.378 4.908l-.997 3.642 3.731-.979zm11.233-7.513c-.274-.137-1.62-.799-1.87-.891-.25-.092-.433-.137-.615.137-.183.274-.707.891-.867 1.073-.16.183-.32.206-.594.069-.274-.137-1.156-.426-2.202-1.359-.815-.728-1.366-1.626-1.526-1.899-.16-.274-.017-.422.12-.558.124-.122.274-.32.411-.479.137-.16.183-.274.274-.457.092-.183.045-.343-.023-.479-.068-.137-.615-1.482-.843-2.029-.222-.534-.488-.46-.662-.469-.17-.008-.365-.01-.56-.01-.195 0-.512.073-.78.365-.268.293-1.024 1.002-1.024 2.445 0 1.443 1.049 2.836 1.195 3.033.146.197 2.064 3.151 5.001 4.423.699.303 1.244.484 1.67.62.704.223 1.345.191 1.851.116.564-.084 1.62-.662 1.85-1.277.23-.615.23-1.141.16-1.251-.069-.11-.25-.183-.524-.32z"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Stylized Google map frame -->
+          <div class="map-frame-wrapper">
+            <iframe src="https://maps.google.com/maps?q=Murlidhar%20Complex,%20opposite%20Hanumanji%20Temple,%20Nehrunagar,%20Ambawadi,%20Ahmedabad,%20Gujarat%20380015&t=&z=15&ie=UTF8&iwloc=&output=embed" width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" aria-label="Sharon lounge google map location details"></iframe>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       8. FOOTER
+       ========================================================================== -->
+  <footer>
+    <div class="container footer-grid">
+      
+      <!-- Footer details -->
+      <div class="footer-brand">
+        <a href="#home" class="logo" aria-label="Sharon Make Up Lounge Home">
+          <img src="assets/logo.png" alt="Sharon Make Up Lounge Logo" style="height: 65px; width: auto; object-fit: contain; margin-bottom: 15px;">
+        </a>
+        <p style="margin-top: 15px;">Premium light beauty brand boutique selling curated cosmetics, nail accents, and hair treatments.</p>
+        <p style="font-size:0.8rem; color:var(--text-muted);">Stay Gorgeous.</p>
+      </div>
+
+      <!-- Links -->
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul class="footer-nav">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#shop">Shop/Products</a></li>
+          <li><a href="#reels">Featured Reels</a></li>
+          <li><a href="#about">About us</a></li>
+          <li><a href="#testimonials">Community Reviews</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Newsletter subscription -->
+      <div class="footer-newsletter">
+        <h4>Join the Lounge</h4>
+        <p>Subscribe to receive notifications for secret cosmetics drops, styling tips, and private events.</p>
+        <form class="newsletter-form" id="newsletterForm">
+          <input type="tel" id="newsletterPhone" placeholder="Your WhatsApp Number" aria-label="Newsletter WhatsApp number" required>
+          <button type="submit" class="newsletter-submit-btn" aria-label="Subscribe to newsletter">
+            <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Legal notes and copy -->
+    <div class="container footer-bottom">
+      <span class="copyright">&copy; 2026 Sharon Make Up Lounge. All rights reserved.</span>
+      <div class="footer-legal-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       9. LIGHTBOX / MODAL SYSTEM
+       ========================================================================== -->
+  <div id="lightboxModal" class="lightbox-modal" role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
+    <div class="lightbox-content-wrapper">
+      <button class="lightbox-close-btn" aria-label="Close details dialog">&times;</button>
+      <div class="lightbox-body">
+        <!-- Content dynamically injected via script.js -->
+      </div>
+      <div class="lightbox-caption" id="lightbox-title">
+        <!-- Caption injected via script.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript script -->
+  <script src="script.js"></script>
+</body>
+</html>
